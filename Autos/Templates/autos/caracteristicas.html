@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CARACTERISTICAS</title>
+    <style>
+        body {
+            background-color: #f2f2f2; /* Fondo gris */
+            color: #333; /* Texto más oscuro */
+            font-family: Arial, sans-serif; /* Fuente predeterminada para mejor compatibilidad */
+            padding: 20px; /* Espaciado interno en el cuerpo */
+        }
+
+        h1 {
+            color: navy; /* Título en azul marino */
+            font-weight: bold; /* Texto en negrita */
+            font-size: 1.5em; /* Tamaño de letra un poco más grande */
+            display: inline-block; /* Para que el emoji esté en la misma línea que el texto */
+        }
+
+        .detalle-container {
+            display: flex;
+            margin-top: 20px; /* Separación entre el título y la información del vehículo */
+        }
+
+        .detalle-info {
+            flex: 1; /* Hace que la información del vehículo ocupe el espacio disponible */
+        }
+
+        .detalle-info div {
+            font-weight: bold; /* Texto en negrita */
+            margin-bottom: 10px; /* Espaciado entre elementos de la información del vehículo */
+            font-size: 1.2em; /* Tamaño de letra un poco más grande */
+        }
+
+        img {
+            max-width: 100%; /* Ajusta el ancho máximo de la imagen para que se ajuste al contenedor */
+            height: auto; /* Ajusta automáticamente la altura en función del ancho */
+            margin-left: 20px; /* Espacio a la izquierda de la imagen para separarla de la información del vehículo */
+        }
+    </style>
+</head>
+<body>
+
+<h1>BIENVENIDO A CARACTERISTICAS DE AUTO 🚗</h1>
+
+<div class="detalle-container">
+    <div class="detalle-info">
+        <div>ID CARRO: <span style="color: #00bfff;">{{ Detalle.id }}</span></div>
+        <div>MODELO: {{ Detalle.Modelo }}</div>
+        <div>MARCA: {{ Detalle.Marca }}</div>
+        <div>COLOR: {{ Detalle.Color }}</div>
+        <div>AÑO: {{ Detalle.Anio }}</div>
+    </div>
+
+    <!-- Mostrar imagen según el vehículo -->
+    {% if Detalle.id == 1 %}
+        <img src="https://www.km77.com/images/medium/1/3/6/7/audi-a6-avant-lateral-posterior.341367.jpg" alt="Imagen Vehículo 1">
+    {% elif Detalle.id == 3 %}
+        <img src="https://www.km77.com/images/medium/2/0/2/5/hyundai-tucson-diesel-curva.322025.jpg" alt="Imagen Vehículo 2">
+    {% elif Detalle.id == 4 %}
+        <img src="https://www.kia.com/content/dam/kwcms/gt/en/images/showroom/EV6-CV-22My/Features/360vr/SnowWhitePearl/68.png" alt="Imagen Vehículo 3">
+    {% elif Detalle.id == 5 %}
+        <img src="https://www.km77.com/images/medium/5/2/5/3/lexus-is-2017-posterior.325253.jpg" alt="Imagen Vehículo 4">
+    {% endif %}
+</div>
+
+</body>
+</html>

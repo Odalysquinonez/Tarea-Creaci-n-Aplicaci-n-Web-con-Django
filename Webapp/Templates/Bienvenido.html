@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title style="color: navy;">Hola y Bienvenido</title>
+    <style>
+        body {
+            background-image: url('https://st1.uvnimg.com/d1/f3/8e7325e64441883e4c135a61dddd/los-mejores-carros-2022.jpg'); /* Reemplaza con la URL de tu imagen */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; /* Gray background color as fallback */
+            color: navy; /* Color del texto en azul marino */
+        }
+
+        h1 {
+            color: navy; /* Color del título en azul marino */
+        }
+
+        .numero-vehiculos {
+            font-weight: bold; /* Texto en negrita */
+            color: black; /* Color del texto en negro */
+            font-size: 1.2em; /* Tamaño de fuente un poco más grande */
+        }
+
+        ul {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding: 0; /* Elimina el relleno predeterminado de la lista */
+        }
+
+        li {
+            font-weight: bold; /* Establece el texto en negrita */
+            color: black; /* Color del texto en negro */
+        }
+    </style>
+</head>
+<body>
+    <h1>BIENVENIDOS A LA EXPERIENCIA SELECT CAR</h1>
+
+    <div class="numero-vehiculos">Número de vehículos en SELECT CAR: {{ No_Vehiculo }}</div>
+    <div>
+        <ul>
+            {% for vehiculo in Detalle %}
+                <li>
+                    Auto {{ vehiculo.id }} 🚗 <!-- Car emoji -->
+                    <a href="/Elementos/{{ vehiculo.id }}">Ver Características</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
